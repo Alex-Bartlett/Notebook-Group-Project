@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:Notebook"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button>
+                <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
+            </Button>
+            <Button>
+                <Image Source="/Images/btnItalic.png" Width="20" Height="20"></Image>
+            </Button>
+            <Button>
+                <Image Source="/Images/btnUnderline.png" Width="20" Height="20"></Image>
+            </Button>
+        </ToolBar>
+        <RichTextBox Name="rtbTextEditor"></RichTextBox>
+    </DockPanel>
 </Window>
