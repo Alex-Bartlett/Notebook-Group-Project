@@ -18,6 +18,19 @@
                 <Image Source="Images/btnUnderline.png" Width="20" Height="20"></Image>
             </ToggleButton>
         </ToolBar>
-        <RichTextBox Name="rtbTextEditor"></RichTextBox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30px"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30px"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10px"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10px"/>
+            </Grid.RowDefinitions>
+            <RichTextBox Name="rtbTextEditor" Grid.Column="2" Grid.Row="1"></RichTextBox>
+        </Grid>
     </DockPanel>
 </Window>
