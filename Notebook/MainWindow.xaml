@@ -8,15 +8,15 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <ToolBar DockPanel.Dock="Top">
-            <Button>
+            <ToggleButton>
                 <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
-            </Button>
-            <Button>
-                <Image Source="/Images/btnItalic.png" Width="20" Height="20"></Image>
-            </Button>
-            <Button>
+            </ToggleButton>
+            <ToggleButton>
+                <Image Source="Images/btnItalic.png" Width="20" Height="20"></Image>
+            </ToggleButton>
+            <ToggleButton>
                 <Image Source="/Images/btnUnderline.png" Width="20" Height="20"></Image>
-            </Button>
+            </ToggleButton>
         </ToolBar>
         <RichTextBox Name="rtbTextEditor"></RichTextBox>
     </DockPanel>
