@@ -1,0 +1,15 @@
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\bin\Debug\NotebookOne.exe.config
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\bin\Debug\NotebookOne.exe
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\bin\Debug\NotebookOne.pdb
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.csprojAssemblyReference.cache
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\MainWindow.g.cs
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\App.g.cs
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne_MarkupCompile.cache
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne_MarkupCompile.lref
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\MainWindow.baml
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.g.resources
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.Properties.Resources.resources
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.csproj.GenerateResource.cache
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.csproj.CoreCompileInputs.cache
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.exe
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.pdb

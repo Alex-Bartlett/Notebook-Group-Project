@@ -26,15 +26,15 @@
             <MenuItem Header="View"/>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
-            <ToggleButton>
+            <Button Command="EditingCommands.ToggleBold">
                 <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
-            </ToggleButton>
-            <ToggleButton>
+            </Button>
+            <Button Command="EditingCommands.ToggleItalic">
                 <Image Source="/Images/btnItalic.png" Width="20" Height="20"></Image>
-            </ToggleButton>
-            <ToggleButton>
+            </Button>
+            <Button Command="EditingCommands.ToggleUnderline">
                 <Image Source="/Images/btnUnderline.png" Width="20" Height="20"></Image>
-            </ToggleButton>
+            </Button>
         </ToolBar>
         <Grid>
             <Grid.ColumnDefinitions>
