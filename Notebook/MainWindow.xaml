@@ -9,13 +9,13 @@
     <DockPanel>
         <ToolBar DockPanel.Dock="Top">
             <ToggleButton>
-                <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
+                <Image Source="Images/btnBold.png" Width="20" Height="20"></Image>
             </ToggleButton>
             <ToggleButton>
                 <Image Source="Images/btnItalic.png" Width="20" Height="20"></Image>
             </ToggleButton>
             <ToggleButton>
-                <Image Source="/Images/btnUnderline.png" Width="20" Height="20"></Image>
+                <Image Source="Images/btnUnderline.png" Width="20" Height="20"></Image>
             </ToggleButton>
         </ToolBar>
         <RichTextBox Name="rtbTextEditor"></RichTextBox>
