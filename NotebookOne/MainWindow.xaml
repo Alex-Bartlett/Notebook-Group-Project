@@ -1,9 +1,9 @@
-﻿<Window x:Class="Notebook.MainWindow"
+﻿<Window x:Class="NotebookOne.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Notebook"
+        xmlns:local="clr-namespace:NotebookOne"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
@@ -27,13 +27,13 @@
         </Menu>
         <ToolBar DockPanel.Dock="Top">
             <ToggleButton>
-                <Image Source="Images/btnBold.png" Width="20" Height="20"></Image>
+                <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
             </ToggleButton>
             <ToggleButton>
-                <Image Source="Images/btnItalic.png" Width="20" Height="20"></Image>
+                <Image Source="/Images/btnItalic.png" Width="20" Height="20"></Image>
             </ToggleButton>
             <ToggleButton>
-                <Image Source="Images/btnUnderline.png" Width="20" Height="20"></Image>
+                <Image Source="/Images/btnUnderline.png" Width="20" Height="20"></Image>
             </ToggleButton>
         </ToolBar>
         <Grid>
