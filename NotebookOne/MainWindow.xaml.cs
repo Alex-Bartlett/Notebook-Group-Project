@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,18 @@ namespace NotebookOne
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
+		{
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			saveFileDialog.Filter = "Rich Text Format (*.rtf) |*.rtf|All files (*.*)|*.*";
+			if (saveFileDialog.ShowDialog() == true)
+			{
+				FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
+				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
+				textRange.Save(fileStream, DataFormats.Rtf);
+			}
 		}
 	}
 }

@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotebookOne"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Notebook One" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Save" Executed="SaveExecuted"/>
+    </Window.CommandBindings>
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
+        <Menu DockPanel.Dock="Top" Background="#FF444781" Foreground="Black">
             <MenuItem Header="File">
                 <MenuItem Header="New" />
                 <MenuItem Header="Open" />
-                <MenuItem Header="Save" />
+                <MenuItem Header="Save" Command="ApplicationCommands.Save"/>
                 <MenuItem Header="Save As" />
                 <MenuItem Header="Print" />
                 <Separator />
@@ -25,7 +28,7 @@
             </MenuItem>
             <MenuItem Header="View"/>
         </Menu>
-        <ToolBar DockPanel.Dock="Top">
+        <ToolBar DockPanel.Dock="Top" Background="White">
             <Button Command="EditingCommands.ToggleBold">
                 <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
             </Button>
