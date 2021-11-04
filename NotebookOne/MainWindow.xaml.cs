@@ -51,5 +51,20 @@ namespace NotebookOne
 			}
 			return subFolderPath;
 		}
+		private void OpenFile(object sender, ExecutedRoutedEventArgs e)
+        {
+			OpenFileDialog openFile1 = new OpenFileDialog();
+
+			openFile1.DefaultExt = "*.rtf";
+			openFile1.Filter = "RTF Files|*.rtf";
+
+			if (openFile1.ShowDialog() == true)
+			{
+				FileStream file = new FileStream(openFile1.FileName, FileMode.OpenOrCreate);
+				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
+				textRange.Load(file, DataFormats.Rtf);
+
+			}
+		}
 	}
 }
