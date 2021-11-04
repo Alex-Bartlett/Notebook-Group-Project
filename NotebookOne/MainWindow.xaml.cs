@@ -25,6 +25,7 @@ namespace NotebookOne
 		public MainWindow()
 		{
 			InitializeComponent();
+			GetSaveFolder();
 		}
 
 		private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
@@ -37,6 +38,18 @@ namespace NotebookOne
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Save(fileStream, DataFormats.Rtf);
 			}
+		}
+
+		private string GetSaveFolder()
+		{
+			var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+			var subFolderPath = System.IO.Path.Combine(path, "Notebook_One");
+			//Create folder if does not already exist.
+			if (!Directory.Exists(subFolderPath))
+			{
+				Directory.CreateDirectory(subFolderPath);
+			}
+			return subFolderPath;
 		}
 	}
 }
