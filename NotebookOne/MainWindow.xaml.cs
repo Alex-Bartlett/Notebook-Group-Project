@@ -52,7 +52,7 @@ namespace NotebookOne
 			return subFolderPath;
 		}
 		private void OpenFile(object sender, ExecutedRoutedEventArgs e)
-        {
+		{
 			OpenFileDialog openFile1 = new OpenFileDialog();
 
 			openFile1.DefaultExt = "*.rtf";
@@ -64,7 +64,8 @@ namespace NotebookOne
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Load(file, DataFormats.Rtf);
 
-
+			}
+		}
 		/// <summary>
 		/// Creates a grid row in the given grid
 		/// </summary>
@@ -72,23 +73,27 @@ namespace NotebookOne
 		/// <param name="name">The name of the row</param>
 		private void CreateGridRow(Grid grid, string name)
 		{
-			RowDefinition row = new RowDefinition();
-			row.Height = new GridLength(20, GridUnitType.Auto);
-			row.Name = name;
+			RowDefinition row = new RowDefinition
+			{
+				Height = new GridLength(20, GridUnitType.Auto),
+				Name = name
+			};
 			grid.RowDefinitions.Add(row);
 		}
 
 		private void CreateFileBtn(Grid grid, int gridRow, int gridColumn, string text)
 		{
-			Button btn = new Button();
-			btn.Width = 100;
-			btn.Height = 20;
+			Button btn = new Button
+			{
+				Width = 100,
+				Height = 20,
+				Name = text,
+				Content = text,
+				Margin = new Thickness(5, 5, 5, 0)
+			};
 			//Set grid positions
 			Grid.SetColumn(btn, gridColumn);
 			Grid.SetRow(btn, gridRow);
-			btn.Name = text;
-			btn.Content = text;
-			btn.Margin = new Thickness(5, 5, 5, 0);
 			//Add button
 			grid.Children.Add(btn);
 		}
