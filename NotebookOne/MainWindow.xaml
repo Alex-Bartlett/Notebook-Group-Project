@@ -60,14 +60,17 @@
             </Grid.RowDefinitions>
             <!--Grid for notes page-->
             <Border BorderBrush="#FF444781" BorderThickness="0,0,5,0" Grid.Row="1" Grid.Column="0" Background="#FF3E3E3E">
-                <Grid Name="FilesGrid">
+                <Grid Name="FilesGrid" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10px"/>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="10px"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="1" Content="Your Notes" Foreground="White" Width="100px" Height="30px" Padding="5" FontWeight="SemiBold" HorizontalAlignment="Left" FontSize="16"/>
                 </Grid>
             </Border>
 

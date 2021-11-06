@@ -105,11 +105,14 @@ namespace NotebookOne
 		{
 			Button btn = new Button
 			{
-				Width = 100,
-				Height = 20,
+				Width = 150,
+				Height = 25,
 				DataContext = path,
 				Content = content,
-				Margin = new Thickness(5, 5, 5, 0)
+				Margin = new Thickness(5, 5, 5, 0),
+				BorderBrush = new SolidColorBrush(Color.FromRgb(116, 116, 116)),
+				Background = new SolidColorBrush(Color.FromRgb(116, 116, 116)),
+				Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255))
 			};
 			btn.Click += LoadBtn_Click;
 			//Set grid positions
@@ -159,8 +162,7 @@ namespace NotebookOne
 				string filePath = files[index];
 				string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
 				CreateGridRow(grid);
-				CreateFileBtn(grid, index, 1, fileName, filePath);
-				Console.WriteLine("Added button for " + fileName + ". I put it in row " + index);
+				CreateFileBtn(grid, (index + 1), 1, fileName, filePath);
 			}
 		}
 	}
