@@ -51,6 +51,12 @@ namespace NotebookOne
 			}
 			return subFolderPath;
 		}
+
+		/// <summary>
+		/// Opens a file dialog, then loads it into the RTB.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void OpenFile(object sender, ExecutedRoutedEventArgs e)
 		{
 			OpenFileDialog openFile1 = new OpenFileDialog();
@@ -60,10 +66,25 @@ namespace NotebookOne
 
 			if (openFile1.ShowDialog() == true)
 			{
-				FileStream file = new FileStream(openFile1.FileName, FileMode.OpenOrCreate);
+				LoadFile(openFile1.FileName);
+			}
+		}
+
+		/// <summary>
+		/// Loads a file into the RTB
+		/// </summary>
+		/// <param name="path">File path to load</param>
+		private void LoadFile(string path)
+		{
+			try
+			{
+				FileStream file = new FileStream(path, FileMode.OpenOrCreate);
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Load(file, DataFormats.Rtf);
-
+			}
+			catch (IOException e)
+			{
+				Console.WriteLine(e.Message + " Did the user try loading the current document?");
 			}
 		}
 		/// <summary>
@@ -71,31 +92,37 @@ namespace NotebookOne
 		/// </summary>
 		/// <param name="grid">The grid to use</param>
 		/// <param name="name">The name of the row</param>
-		private void CreateGridRow(Grid grid, string name)
+		private void CreateGridRow(Grid grid)
 		{
 			RowDefinition row = new RowDefinition
 			{
-				Height = new GridLength(20, GridUnitType.Auto),
-				Name = name
+				Height = new GridLength(20, GridUnitType.Auto)
 			};
 			grid.RowDefinitions.Add(row);
 		}
 
-		private void CreateFileBtn(Grid grid, int gridRow, int gridColumn, string text)
+		private void CreateFileBtn(Grid grid, int gridRow, int gridColumn, string content, string path)
 		{
 			Button btn = new Button
 			{
 				Width = 100,
 				Height = 20,
-				Name = text,
-				Content = text,
+				DataContext = path,
+				Content = content,
 				Margin = new Thickness(5, 5, 5, 0)
 			};
+			btn.Click += LoadBtn_Click;
 			//Set grid positions
 			Grid.SetColumn(btn, gridColumn);
 			Grid.SetRow(btn, gridRow);
 			//Add button
 			grid.Children.Add(btn);
+		}
+
+		private void LoadBtn_Click(object sender, RoutedEventArgs e)
+		{
+			Button clicked = (Button)sender;
+			LoadFile(clicked.DataContext.ToString());
 		}
 
 		/// <summary>
@@ -131,8 +158,8 @@ namespace NotebookOne
 			{
 				string filePath = files[index];
 				string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
-				CreateGridRow(grid, fileName);
-				CreateFileBtn(grid, index, 1, fileName);
+				CreateGridRow(grid);
+				CreateFileBtn(grid, index, 1, fileName, filePath);
 				Console.WriteLine("Added button for " + fileName + ". I put it in row " + index);
 			}
 		}
