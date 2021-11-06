@@ -101,5 +101,9 @@
     <Resource Include="Images\btnUnderline.png" />
     <Resource Include="Images\icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_fontsizedown.png" />
+    <Resource Include="Images\btn_fontsizeup.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

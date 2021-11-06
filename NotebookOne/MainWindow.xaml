@@ -39,6 +39,12 @@
             <Button Command="EditingCommands.ToggleUnderline">
                 <Image Source="/Images/btnUnderline.png" Width="20" Height="20"></Image>
             </Button>
+            <Button Command="EditingCommands.IncreaseFontSize">
+                <Image Source="/Images/btn_fontsizeup.png" Width="22" Height="22"></Image>
+            </Button>
+            <Button Command="EditingCommands.DecreaseFontSize">
+                <Image Source="/Images/btn_fontsizedown.png" Width="22" Height="22"></Image>
+            </Button>
         </ToolBar>
         <Grid>
             <Grid.ColumnDefinitions>
