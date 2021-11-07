@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btn_fontsizedown.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btn_fontsizeup.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btndelete.png")]
 
 

@@ -25,7 +25,7 @@ namespace NotebookOne
 		public MainWindow()
 		{
 			InitializeComponent();
-			LoadFilesIntoGrid(FilesGrid);
+			RefreshFilesGrid();
 		}
 
 		private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
@@ -37,7 +37,8 @@ namespace NotebookOne
 				FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Save(fileStream, DataFormats.Rtf);
-			}			
+			}
+			RefreshFilesGrid();
 		}
 
 		private string GetSaveFolder()
@@ -76,15 +77,23 @@ namespace NotebookOne
 		/// <param name="path">File path to load</param>
 		private void LoadFile(string path)
 		{
+			FileStream file = null;
 			try
 			{
-				FileStream file = new FileStream(path, FileMode.OpenOrCreate);
+				file = new FileStream(path, FileMode.Open, FileAccess.Read);
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Load(file, DataFormats.Rtf);
 			}
 			catch (IOException e)
 			{
 				Console.WriteLine(e.Message + " Did the user try loading the current document?");
+			}
+			finally
+			{
+				if (file != null)
+				{
+					file.Dispose();
+				}
 			}
 		}
 		/// <summary>
@@ -120,6 +129,70 @@ namespace NotebookOne
 			Grid.SetRow(btn, gridRow);
 			//Add button
 			grid.Children.Add(btn);
+		}
+
+		/// <summary>
+		/// Creates a button in grid that deletes file in given path
+		/// </summary>
+		/// <param name="grid"></param>
+		/// <param name="gridRow"></param>
+		/// <param name="gridColumn"></param>
+		/// <param name="path">Path of file to delete</param>
+		private void CreateDeleteButton(Grid grid, int gridRow, int gridColumn, string path)
+		{
+			Button btn = new Button
+			{
+				Width = 25,
+				Height = 25,
+				DataContext = path,
+				BorderBrush = new SolidColorBrush(Color.FromRgb(116, 116, 116)),
+				Background = new SolidColorBrush(Color.FromRgb(116, 116, 116)),
+				Margin = new Thickness(0, 5, 0, 0)
+			};
+			btn.Click += DeleteBtn_Click;
+			//Create delete image
+			Image img = new Image();
+			BitmapImage bitmap = new BitmapImage();
+			bitmap.BeginInit();
+			bitmap.UriSource = new Uri("pack://application:,,,/NotebookOne;component/Images/btnDelete.png");
+			bitmap.EndInit();
+			img.Source = bitmap;
+			//Add image to button content
+			btn.Content = img;
+			//Add button to grid
+			Grid.SetRow(btn, gridRow);
+			Grid.SetColumn(btn, gridColumn);
+			grid.Children.Add(btn);
+		}
+
+		private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+		{
+			//Cast to button
+			Button btn = (Button)sender;
+			//Retrieve file path from button data
+			string path = btn.DataContext.ToString();
+			if (DeleteBtnConfirmation(System.IO.Path.GetFileNameWithoutExtension(path))){
+				File.Delete(path);
+				RefreshFilesGrid();
+			}
+		}
+
+		/// <summary>
+		/// Displays a message box asking the user to confirm that they wish to delete the file of supplied name
+		/// </summary>
+		/// <param name="name">The name of the file to delete (not path)</param>
+		/// <returns>True if user selects yes, false if not</returns>
+		private bool DeleteBtnConfirmation(string name)
+		{
+			MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to delete " + name + "?", "Delete", MessageBoxButton.YesNo);
+			if (messageBoxResult == MessageBoxResult.Yes)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		private void LoadBtn_Click(object sender, RoutedEventArgs e)
@@ -163,7 +236,22 @@ namespace NotebookOne
 				string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
 				CreateGridRow(grid);
 				CreateFileBtn(grid, (index + 1), 1, fileName, filePath);
+				CreateDeleteButton(grid, (index + 1), 2, filePath);
 			}
+		}
+
+		private void RefreshFilesGrid()
+		{
+			Grid grid = FilesGrid;
+			//Clear files if they already exist
+			int children = grid.Children.Count;
+			if (children > 1)
+			{
+				//Remove all children except first, since this is the label
+				grid.Children.RemoveRange(1, grid.Children.Count - 1);
+			}
+			//Load the files again
+			LoadFilesIntoGrid(grid);
 		}
 	}
 }

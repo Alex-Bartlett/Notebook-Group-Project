@@ -64,6 +64,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10px"/>
                         <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="10px"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
