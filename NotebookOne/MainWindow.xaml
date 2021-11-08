@@ -51,6 +51,16 @@
             <Button Command="EditingCommands.ToggleNumbering">
                 <Image Source="/Images/btn_numberingpnt.png" Width="20" Height="20"></Image>
             </Button>
+            <Button Name="AlignLeftButton" 
+        HorizontalContentAlignment="Left"
+        Click="AlignLeft">
+                HorizontalContentAlignment
+            </Button>
+            <Button Name="AlignRightButton" 
+        HorizontalContentAlignment="Right"
+        Click="AlignRight">
+                HorizontalContentAlignment
+            </Button>
         </ToolBar>
         <Grid>
             <Grid.ColumnDefinitions>

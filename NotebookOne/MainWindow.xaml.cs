@@ -171,7 +171,7 @@ namespace NotebookOne
 			Button btn = (Button)sender;
 			//Retrieve file path from button data
 			string path = btn.DataContext.ToString();
-			if (DeleteBtnConfirmation(System.IO.Path.GetFileNameWithoutExtension(path))){
+			if (DeleteBtnConfirmation(System.IO.Path.GetFileNameWithoutExtension(path))) {
 				File.Delete(path);
 				RefreshFilesGrid();
 			}
@@ -213,7 +213,7 @@ namespace NotebookOne
 			string[] f = Directory.GetFiles(folderPath);
 			List<string> files = f.ToList();
 			//Remove non-rtf files
-			foreach(string filePath in files)
+			foreach (string filePath in files)
 			{
 				if (!filePath.EndsWith(".rtf"))
 				{
@@ -230,7 +230,7 @@ namespace NotebookOne
 		private void LoadFilesIntoGrid(Grid grid)
 		{
 			List<string> files = GetFilesInDirectory();
-			for(int index = 0; index < files.Count; index++)
+			for (int index = 0; index < files.Count; index++)
 			{
 				string filePath = files[index];
 				string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
@@ -253,5 +253,8 @@ namespace NotebookOne
 			//Load the files again
 			LoadFilesIntoGrid(grid);
 		}
+
+
+
 	}
 }
