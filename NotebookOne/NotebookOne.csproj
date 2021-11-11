@@ -112,5 +112,10 @@
     <Resource Include="Images\btn_bulletpnt.png" />
     <Resource Include="Images\btn_numberingpnt.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btnAlignCentre.png" />
+    <Resource Include="Images\btnAlignLeft.png" />
+    <Resource Include="Images\btnAlignRight.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

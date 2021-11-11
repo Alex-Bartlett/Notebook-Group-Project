@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btn_bulletpnt.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btn_numberingpnt.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btnaligncentre.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btnalignleft.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btnalignright.png")]
 
 
