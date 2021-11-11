@@ -22,10 +22,10 @@
                 <MenuItem Header="Exit" />
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Copy"/>
-                <MenuItem Header="Paste"/>
-                <MenuItem Header="Undo"/>
-                <MenuItem Header="Redo"/>
+                <MenuItem Header="Copy" Command="ApplicationCommands.Copy"/>
+                <MenuItem Header="Paste" Command="ApplicationCommands.Paste"/>
+                <MenuItem Header="Undo" Command="ApplicationCommands.Undo"/>
+                <MenuItem Header="Redo" Command="ApplicationCommands.Redo"/>
             </MenuItem>
             <MenuItem Header="View"/>
         </Menu>
@@ -44,6 +44,22 @@
             </Button>
             <Button Command="EditingCommands.DecreaseFontSize">
                 <Image Source="/Images/btn_fontsizedown.png" Width="22" Height="22"></Image>
+            </Button>
+            <Button Command="EditingCommands.ToggleBullets">
+                <Image Source="/Images/btn_bulletpnt.png" Width="20" Height="20"></Image>
+            </Button>
+            <Button Command="EditingCommands.ToggleNumbering">
+                <Image Source="/Images/btn_numberingpnt.png" Width="20" Height="20"></Image>
+            </Button>
+            <Button Name="AlignLeftButton" 
+        HorizontalContentAlignment="Left"
+        Click="AlignLeft">
+                HorizontalContentAlignment
+            </Button>
+            <Button Name="AlignRightButton" 
+        HorizontalContentAlignment="Right"
+        Click="AlignRight">
+                HorizontalContentAlignment
             </Button>
         </ToolBar>
         <Grid>
