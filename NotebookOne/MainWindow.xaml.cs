@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -254,7 +255,40 @@ namespace NotebookOne
 			LoadFilesIntoGrid(grid);
 		}
 
+		private void rtbTextEditor_SelectionChanged(object sender, RoutedEventArgs e)
+		{
+			UpdateToggleButtonState();
+		}
 
+		private void UpdateToggleButtonState()
+		{
+			UpdateItemCheckedState(btnBold, TextElement.FontWeightProperty, FontWeights.Bold);
+			UpdateItemCheckedState(btnItalic, TextElement.FontStyleProperty, FontStyles.Italic);
+			UpdateItemCheckedState(btnUnderline, Inline.TextDecorationsProperty, TextDecorations.Underline);
+			//UntoggleAlignmentBtns handles when a button is pressed, but this still handles when a line has different alignment
+			UpdateItemCheckedState(btnAlignLeft, Block.TextAlignmentProperty, TextAlignment.Left);
+			UpdateItemCheckedState(btnAlignCentre, Block.TextAlignmentProperty, TextAlignment.Center);
+			UpdateItemCheckedState(btnAlignRight, Block.TextAlignmentProperty, TextAlignment.Right);
+		}
 
+		private void UpdateItemCheckedState(ToggleButton button, DependencyProperty formattingProperty, object expectedValue)
+		{
+			object currentValue = rtbTextEditor.Selection.GetPropertyValue(formattingProperty);
+			button.IsChecked = (currentValue == DependencyProperty.UnsetValue) ? false : currentValue != null && currentValue.Equals(expectedValue);
+		}
+
+		private void UntoggleAlignmentBtns(object sender, RoutedEventArgs e)
+		{
+			//Define all buttons
+			List<ToggleButton> btns = new List<ToggleButton>(){btnAlignRight, btnAlignLeft, btnAlignCentre};
+			ToggleButton btnPressed = (ToggleButton)sender;
+			btns.Remove(btnPressed); //Remove the button that was pressed
+			//Set other buttons to unchecked
+			foreach (ToggleButton btn in btns)
+			{
+				btn.IsChecked = false;
+			}
+			btnPressed.IsChecked = true; //Set pressed button to true
+		}
 	}
 }
