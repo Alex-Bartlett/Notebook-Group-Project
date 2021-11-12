@@ -30,34 +30,34 @@
             <MenuItem Header="View"/>
         </Menu>
         <ToolBar DockPanel.Dock="Top" Background="White">
-            <ToggleButton Name="btnBold" Command="EditingCommands.ToggleBold">
+            <ToggleButton Name="btnBold" Command="EditingCommands.ToggleBold" ToolTip="Bold">
                 <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
             </ToggleButton>
-            <ToggleButton Name="btnItalic" Command="EditingCommands.ToggleItalic">
+            <ToggleButton Name="btnItalic" Command="EditingCommands.ToggleItalic" ToolTip="Italic">
                 <Image Source="/Images/btnItalic.png" Width="20" Height="20"></Image>
             </ToggleButton>
-            <ToggleButton Name="btnUnderline" Command="EditingCommands.ToggleUnderline">
+            <ToggleButton Name="btnUnderline" Command="EditingCommands.ToggleUnderline" ToolTip="Underline">
                 <Image Source="/Images/btnUnderline.png" Width="20" Height="20"></Image>
             </ToggleButton>
-            <Button Name="btnIncreaseFontSize" Command="EditingCommands.IncreaseFontSize">
+            <Button Name="btnIncreaseFontSize" Command="EditingCommands.IncreaseFontSize" ToolTip="Increase Font Size">
                 <Image Source="/Images/btn_fontsizeup.png" Width="22" Height="22"></Image>
             </Button>
-            <Button Name="btnDecreaseFontSize" Command="EditingCommands.DecreaseFontSize">
+            <Button Name="btnDecreaseFontSize" Command="EditingCommands.DecreaseFontSize" ToolTip="Decrease Font Size">
                 <Image Source="/Images/btn_fontsizedown.png" Width="22" Height="22"></Image>
             </Button>
-            <ToggleButton Name="btnToggleBullets" Command="EditingCommands.ToggleBullets">
+            <ToggleButton Name="btnToggleBullets" Command="EditingCommands.ToggleBullets" ToolTip="Bullet Points">
                 <Image Source="/Images/btn_bulletpnt.png" Width="20" Height="20"></Image>
             </ToggleButton>
-            <ToggleButton Name="btnToggleNumbering" Command="EditingCommands.ToggleNumbering">
+            <ToggleButton Name="btnToggleNumbering" Command="EditingCommands.ToggleNumbering" ToolTip="Number Points">
                 <Image Source="/Images/btn_numberingpnt.png" Width="20" Height="20"></Image>
             </ToggleButton>
-            <ToggleButton Name="btnAlignLeft" Command="EditingCommands.AlignLeft" Click="UntoggleAlignmentBtns">
+            <ToggleButton Name="btnAlignLeft" Command="EditingCommands.AlignLeft" Click="UntoggleAlignmentBtns" ToolTip="Align Left">
                 <Image Source="/Images/btnAlignLeft.png" Width="20" Height="20"/>
             </ToggleButton>
-            <ToggleButton Name="btnAlignCentre" Command="EditingCommands.AlignCenter" Click="UntoggleAlignmentBtns">
+            <ToggleButton Name="btnAlignCentre" Command="EditingCommands.AlignCenter" Click="UntoggleAlignmentBtns" ToolTip="Align Centre">
                 <Image Source="/Images/btnAlignCentre.png" Width="20" Height="20"/>
             </ToggleButton>
-            <ToggleButton Name="btnAlignRight" Command="EditingCommands.AlignRight" Click="UntoggleAlignmentBtns">
+            <ToggleButton Name="btnAlignRight" Command="EditingCommands.AlignRight" Click="UntoggleAlignmentBtns" ToolTip="Align Right">
                 <Image Source="/Images/btnAlignRight.png" Width="20" Height="20"/>
             </ToggleButton>
         </ToolBar>
