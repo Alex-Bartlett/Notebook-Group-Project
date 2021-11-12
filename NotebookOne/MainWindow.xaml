@@ -30,36 +30,36 @@
             <MenuItem Header="View"/>
         </Menu>
         <ToolBar DockPanel.Dock="Top" Background="White">
-            <Button Command="EditingCommands.ToggleBold">
+            <ToggleButton Name="btnBold" Command="EditingCommands.ToggleBold">
                 <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
-            </Button>
-            <Button Command="EditingCommands.ToggleItalic">
+            </ToggleButton>
+            <ToggleButton Name="btnItalic" Command="EditingCommands.ToggleItalic">
                 <Image Source="/Images/btnItalic.png" Width="20" Height="20"></Image>
-            </Button>
-            <Button Command="EditingCommands.ToggleUnderline">
+            </ToggleButton>
+            <ToggleButton Name="btnUnderline" Command="EditingCommands.ToggleUnderline">
                 <Image Source="/Images/btnUnderline.png" Width="20" Height="20"></Image>
-            </Button>
-            <Button Command="EditingCommands.IncreaseFontSize">
+            </ToggleButton>
+            <Button Name="btnIncreaseFontSize" Command="EditingCommands.IncreaseFontSize">
                 <Image Source="/Images/btn_fontsizeup.png" Width="22" Height="22"></Image>
             </Button>
-            <Button Command="EditingCommands.DecreaseFontSize">
+            <Button Name="btnDecreaseFontSize" Command="EditingCommands.DecreaseFontSize">
                 <Image Source="/Images/btn_fontsizedown.png" Width="22" Height="22"></Image>
             </Button>
-            <Button Command="EditingCommands.ToggleBullets">
+            <ToggleButton Name="btnToggleBullets" Command="EditingCommands.ToggleBullets">
                 <Image Source="/Images/btn_bulletpnt.png" Width="20" Height="20"></Image>
-            </Button>
-            <Button Command="EditingCommands.ToggleNumbering">
+            </ToggleButton>
+            <ToggleButton Name="btnToggleNumbering" Command="EditingCommands.ToggleNumbering">
                 <Image Source="/Images/btn_numberingpnt.png" Width="20" Height="20"></Image>
-            </Button>
-            <Button Name="AlignLeftButton" Command="EditingCommands.AlignLeft">
+            </ToggleButton>
+            <ToggleButton Name="btnAlignLeft" Command="EditingCommands.AlignLeft" Click="UntoggleAlignmentBtns">
                 <Image Source="/Images/btnAlignLeft.png" Width="20" Height="20"/>
-            </Button>
-            <Button Name="AlignCentreButton" Command="EditingCommands.AlignCenter">
+            </ToggleButton>
+            <ToggleButton Name="btnAlignCentre" Command="EditingCommands.AlignCenter" Click="UntoggleAlignmentBtns">
                 <Image Source="/Images/btnAlignCentre.png" Width="20" Height="20"/>
-            </Button>
-            <Button Name="AlignRightButton" Command="EditingCommands.AlignRight">
+            </ToggleButton>
+            <ToggleButton Name="btnAlignRight" Command="EditingCommands.AlignRight" Click="UntoggleAlignmentBtns">
                 <Image Source="/Images/btnAlignRight.png" Width="20" Height="20"/>
-            </Button>
+            </ToggleButton>
         </ToolBar>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -90,7 +90,7 @@
                 </Grid>
             </Border>
 
-            <RichTextBox Name="rtbTextEditor" Grid.Column="2" Grid.Row="1">
+            <RichTextBox Name="rtbTextEditor" Grid.Column="2" Grid.Row="1" SelectionChanged="rtbTextEditor_SelectionChanged">
                 <RichTextBox.Resources>
                     <Style TargetType="{x:Type Paragraph}">
                         <Setter Property="Margin" Value="0"/>
