@@ -290,5 +290,12 @@ namespace NotebookOne
 			}
 			btnPressed.IsChecked = true; //Set pressed button to true
 		}
-	}
+
+        private void rtbTextEditor_TextChanged(object sender, TextChangedEventArgs e)
+		{
+				FontFamily selectedFont = rtbTextEditor.Selection.GetPropertyValue(TextBlock.FontFamilyProperty) as FontFamily;
+				SelectedFontFamily.SelectedValue = selectedFont;
+			}
+		}
+    }
 }
