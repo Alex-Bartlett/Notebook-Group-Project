@@ -58,3 +58,18 @@ C:\Users\Omars\Source\Repos\Notebook-Group-Project1\NotebookOne\obj\Debug\Notebo
 C:\Users\Omars\Source\Repos\Notebook-Group-Project1\NotebookOne\obj\Debug\NotebookOne.csproj.CoreCompileInputs.cache
 C:\Users\Omars\Source\Repos\Notebook-Group-Project1\NotebookOne\obj\Debug\NotebookOne.exe
 C:\Users\Omars\Source\Repos\Notebook-Group-Project1\NotebookOne\obj\Debug\NotebookOne.pdb
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\bin\Debug\NotebookOne.exe.config
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\bin\Debug\NotebookOne.exe
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\bin\Debug\NotebookOne.pdb
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.csproj.AssemblyReference.cache
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\MainWindow.g.cs
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\App.g.cs
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne_MarkupCompile.cache
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne_MarkupCompile.lref
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\MainWindow.baml
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.g.resources
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.Properties.Resources.resources
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.csproj.GenerateResource.cache
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.csproj.CoreCompileInputs.cache
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.exe
+C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.pdb
