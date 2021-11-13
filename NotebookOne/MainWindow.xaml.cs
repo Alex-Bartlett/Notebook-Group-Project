@@ -254,7 +254,9 @@ namespace NotebookOne
 			LoadFilesIntoGrid(grid);
 		}
 
+        private void rtbTextEditor_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
-
-	}
+        }
+    }
 }
