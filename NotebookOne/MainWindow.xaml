@@ -30,6 +30,9 @@
             <MenuItem Header="View"/>
         </Menu>
         <ToolBar DockPanel.Dock="Top" Background="White">
+            <ComboBox x:Name="ComboBoxFontsFamily" Width="60" Height="20">
+                
+            </ComboBox>
             <ToggleButton Name="btnBold" Command="EditingCommands.ToggleBold" ToolTip="Bold">
                 <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
             </ToggleButton>
