@@ -295,7 +295,22 @@ namespace NotebookOne
 		{
 				FontFamily selectedFont = rtbTextEditor.Selection.GetPropertyValue(TextBlock.FontFamilyProperty) as FontFamily;
 				SelectedFontFamily.SelectedValue = selectedFont;
+
+		}
+
+        private void SelectedFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+			
+			if (!IsInitialized) return;
+
+			object selectedFont = SelectedFontFamily.SelectedValue;
+
+			if (selectedFont != null)
+			{
+				rtbTextEditor.FontFamily = new FontFamily(selectedFont.ToString());
 			}
-	}
+		
+	    }
+    }
 }
 
