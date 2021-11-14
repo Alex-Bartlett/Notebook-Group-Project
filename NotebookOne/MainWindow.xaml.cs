@@ -296,6 +296,6 @@ namespace NotebookOne
 				FontFamily selectedFont = rtbTextEditor.Selection.GetPropertyValue(TextBlock.FontFamilyProperty) as FontFamily;
 				SelectedFontFamily.SelectedValue = selectedFont;
 			}
-		}
-    }
+	}
 }
+
