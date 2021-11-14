@@ -303,13 +303,11 @@ namespace NotebookOne
 			
 			if (!IsInitialized) return;
 
-			FontComboBoxItem objFontFamily = FontFamily.SelectedValue as FontComboBoxItem;
+			object selectedFont = SelectedFontFamily.SelectedValue;
 
-			if (objFontFamily != null)
+			if (selectedFont != null)
 			{
-				string FontFamily = objFontFamily.ToString();
-				rtbTextEditor.Selection.ApplyPropertyValue(TextElement.FontFamilyProperty, new FontFamily(FontFamily));
-				rtbTextEditor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, objFontFamily.Brush);
+				rtbTextEditor.FontFamily = new FontFamily(selectedFont.ToString());
 			}
 		
 	    }
