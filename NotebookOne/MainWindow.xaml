@@ -9,7 +9,7 @@
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Save" Executed="SaveExecuted"/>
         <CommandBinding Command="Open" Executed="OpenFile"/>
-        <CommandBinding Command="New" Executed="NewFile"
+        <CommandBinding Command="New" Executed="NewFile"/>
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="#FF444781" Foreground="Black">
