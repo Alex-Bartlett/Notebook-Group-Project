@@ -97,6 +97,12 @@ namespace NotebookOne
 				}
 			}
 		}
+
+		private void NewFile(object sender, ExecutedRoutedEventArgs e)
+		{
+			rtbTextEditor.Document.Blocks.Clear();
+		}
+
 		/// <summary>
 		/// Creates a grid row in the given grid
 		/// </summary>
