@@ -29,7 +29,10 @@
                 <MenuItem Header="Undo" Command="ApplicationCommands.Undo"/>
                 <MenuItem Header="Redo" Command="ApplicationCommands.Redo"/>
             </MenuItem>
-            <MenuItem Header="View"/>
+            <MenuItem Header="View">
+                <MenuItem Header="About Us" Click="AboutUs"/>
+                <MenuItem Header="Help" Click="Help"/>
+            </MenuItem>
         </Menu>
         <ToolBar DockPanel.Dock="Top" Background="White">
             <ComboBox 

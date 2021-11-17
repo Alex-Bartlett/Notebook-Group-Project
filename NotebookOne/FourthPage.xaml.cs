@@ -32,6 +32,7 @@ namespace NotebookOne
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ThirdPage tp = new ThirdPage();
+            Close();
             tp.ShowDialog();
 
         }
@@ -39,6 +40,7 @@ namespace NotebookOne
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             FifthPage ftp = new FifthPage();
+            Close();
             ftp.ShowDialog();
         }
     }

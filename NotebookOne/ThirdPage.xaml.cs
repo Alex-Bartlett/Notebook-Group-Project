@@ -27,6 +27,7 @@ namespace NotebookOne
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             SecondPage sp = new SecondPage();
+            Close();
             sp.ShowDialog();
 
         }
@@ -34,6 +35,7 @@ namespace NotebookOne
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             FourthPage fp = new FourthPage();
+            Close();
             fp.ShowDialog();
         }
     }
