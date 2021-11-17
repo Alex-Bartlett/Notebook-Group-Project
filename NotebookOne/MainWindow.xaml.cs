@@ -376,9 +376,13 @@ namespace NotebookOne
 
         private void rtbTextEditor_TextChanged(object sender, TextChangedEventArgs e)
 		{
-				FontFamily selectedFont = rtbTextEditor.Selection.GetPropertyValue(TextBlock.FontFamilyProperty) as FontFamily;
-				SelectedFontFamily.SelectedValue = selectedFont;
+			UpdateSelectedFontFamily();
+		}
 
+		private void UpdateSelectedFontFamily()
+		{
+			FontFamily selectedFont = rtbTextEditor.Selection.GetPropertyValue(TextBlock.FontFamilyProperty) as FontFamily;
+			SelectedFontFamily.SelectedValue = selectedFont;
 		}
 
         private void SelectedFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
