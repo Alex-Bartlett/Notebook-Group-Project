@@ -29,7 +29,45 @@ namespace NotebookOne
 			RefreshFilesGrid();
 		}
 
+		private void SaveAsExecuted(object sender, ExecutedRoutedEventArgs e)
+		{
+			SaveAs();
+			RefreshFilesGrid();
+		}
+
 		private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
+		{
+			string path = "";
+			if (rtbTextEditor.DataContext != null)
+			{
+				path = rtbTextEditor.DataContext.ToString();
+			}
+			else
+			{
+				SaveAs();
+				RefreshFilesGrid();
+				return;
+			}
+			//Check data context is applied and that it is a valid path
+			if (File.Exists(path))
+			{
+				FileStream fileStream = new FileStream(path, FileMode.Create);
+				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
+				textRange.Save(fileStream, DataFormats.Rtf);
+				fileStream.Dispose();
+			}
+			else
+			{
+				SaveAs();
+				RefreshFilesGrid();
+			}
+			
+		}
+
+		/// <summary>
+		/// Prompts the user to create a new file to save the document to.
+		/// </summary>
+		private void SaveAs()
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "Rich Text Format (*.rtf) |*.rtf|All files (*.*)|*.*";
@@ -38,8 +76,18 @@ namespace NotebookOne
 				FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Save(fileStream, DataFormats.Rtf);
+				fileStream.Dispose();
+				SetRTBDataContext(saveFileDialog.FileName);
 			}
-			RefreshFilesGrid();
+		}
+
+		/// <summary>
+		/// Sets the data context of the richtextbox to the given string
+		/// </summary>
+		/// <param name="data">The data to add</param>
+		private void SetRTBDataContext(string data)
+		{
+			rtbTextEditor.DataContext = data;
 		}
 
 		private string GetSaveFolder()
@@ -111,8 +159,13 @@ namespace NotebookOne
 
 		private void NewFile(object sender, ExecutedRoutedEventArgs e)
 		{
+			SaveExecuted(null, null); //Save current document
 			rtbTextEditor.Document.Blocks.Clear();
+			//Prompt the user to create a new save file for the note
+			SaveAs();
+			RefreshFilesGrid();
 		}
+
 
 		/// <summary>
 		/// Creates a grid row in the given grid
