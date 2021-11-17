@@ -27,6 +27,7 @@ namespace NotebookOne
 		{
 			InitializeComponent();
 			RefreshFilesGrid();
+			PopUpBootUp();
 		}
 
 		private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
@@ -64,6 +65,8 @@ namespace NotebookOne
 			string[] files = Directory.GetFiles(path);
 			return files.Length > 0 ? true : false;
 		}
+
+		
 
 		/// <summary>
 		/// Opens a file dialog, then loads it into the RTB.
@@ -328,6 +331,14 @@ namespace NotebookOne
 			}
 		
 	    }
-    }
+		private void PopUpBootUp()
+		{
+			if (SaveFolderHasContent() == false)
+			{
+				MessageBox.Show("Welcome to NoteBook One");
+			}
+
+		}
+	}
 }
 
