@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -23,11 +24,20 @@ namespace NotebookOne
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		//Auto-save timer
+		public Timer autoSaveTimer = new Timer
+		{
+			Interval = 5000
+		};
+
 		public MainWindow()
 		{
 			InitializeComponent();
 			RefreshFilesGrid();
-		}
+			//Start auto-save timer
+			autoSaveTimer.Elapsed += AutoSaveTimer_Elapsed;
+			autoSaveTimer.Start();
+		}		
 
 		private void SaveAsExecuted(object sender, ExecutedRoutedEventArgs e)
 		{
@@ -37,17 +47,7 @@ namespace NotebookOne
 
 		private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
 		{
-			string path = "";
-			if (rtbTextEditor.DataContext != null)
-			{
-				path = rtbTextEditor.DataContext.ToString();
-			}
-			else
-			{
-				SaveAs();
-				RefreshFilesGrid();
-				return;
-			}
+			string path = GetRTBDataContext();
 			//Check data context is applied and that it is a valid path
 			if (File.Exists(path))
 			{
@@ -90,6 +90,15 @@ namespace NotebookOne
 			rtbTextEditor.DataContext = data;
 		}
 
+		/// <summary>
+		/// Retrieves the data context of the richtextbox
+		/// </summary>
+		/// <returns>Path if exists, "NOT_FOUND" if no data context assigned</returns>
+		private string GetRTBDataContext()
+		{
+			return rtbTextEditor.DataContext != null ? rtbTextEditor.DataContext.ToString() : "NOT_FOUND";
+		}
+
 		private string GetSaveFolder()
 		{
 			var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -101,6 +110,7 @@ namespace NotebookOne
 			}
 			return subFolderPath;
 		}
+
 
 		/// <summary>
 		/// Checks to see if the save folder has content
@@ -120,6 +130,7 @@ namespace NotebookOne
 		/// <param name="e"></param>
 		private void OpenFile(object sender, ExecutedRoutedEventArgs e)
 		{
+			autoSaveTimer.Stop(); //Stop auto-saving whilst opening
 			OpenFileDialog openFile1 = new OpenFileDialog();
 
 			openFile1.DefaultExt = "*.rtf";
@@ -129,6 +140,7 @@ namespace NotebookOne
 			{
 				LoadFile(openFile1.FileName);
 			}
+			autoSaveTimer.Start(); //Resume auto-saving once opened
 		}
 
 		/// <summary>
@@ -143,6 +155,7 @@ namespace NotebookOne
 				file = new FileStream(path, FileMode.Open, FileAccess.Read);
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Load(file, DataFormats.Rtf);
+				SetRTBDataContext(path); //Set current path to data context
 			}
 			catch (IOException e)
 			{
@@ -381,6 +394,14 @@ namespace NotebookOne
 			}
 		
 	    }
-    }
+		private void AutoSaveTimer_Elapsed(object sender, ElapsedEventArgs e)
+		{ 
+			this.Dispatcher.Invoke(() => {
+				autoSaveTimer.Stop();
+				SaveExecuted(null, null);
+				autoSaveTimer.Start();
+			});
+		}
+	}
 }
 
