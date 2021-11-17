@@ -425,6 +425,13 @@ namespace NotebookOne
         {
 			this.Close();
         }
+
+		private int GetWordCount()
+		{
+			TextRange tr = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
+
+			return tr.Text.Split(new string[] { " ", "\n", "\n\r" }, StringSplitOptions.RemoveEmptyEntries).Length;
+		}
 	}
 }
 

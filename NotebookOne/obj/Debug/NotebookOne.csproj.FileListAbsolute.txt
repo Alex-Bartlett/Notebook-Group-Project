@@ -106,3 +106,13 @@ C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\Third
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\FifthPage.baml
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\FourthPage.baml
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\ThirdPage.baml
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\FifthPage.g.cs
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\FourthPage.g.cs
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\SecondPage.g.cs
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\ThirdPage.g.cs
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\WelcomeScreen.g.cs
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\FifthPage.baml
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\FourthPage.baml
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\SecondPage.baml
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\ThirdPage.baml
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\WelcomeScreen.baml
