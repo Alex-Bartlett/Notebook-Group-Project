@@ -55,6 +55,17 @@ namespace NotebookOne
 		}
 
 		/// <summary>
+		/// Checks to see if the save folder has content
+		/// </summary>
+		/// <returns>True if file count > 0, false otherwise</returns>
+		private bool SaveFolderHasContent()
+		{
+			string path = GetSaveFolder();
+			string[] files = Directory.GetFiles(path);
+			return files.Length > 0 ? true : false;
+		}
+
+		/// <summary>
 		/// Opens a file dialog, then loads it into the RTB.
 		/// </summary>
 		/// <param name="sender"></param>

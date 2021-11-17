@@ -73,3 +73,7 @@ C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\ob
 C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.csproj.CoreCompileInputs.cache
 C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.exe
 C:\Users\Lonelsio Caetano\Documents\GitHub\Notebook-Group-Project\NotebookOne\obj\Debug\NotebookOne.pdb
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\bin\Debug\NotebookOne.exe.manifest
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\bin\Debug\NotebookOne.application
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.exe.manifest
+C:\Users\nitro\OneDrive\Documents\Uni\Y2\SoftwareEngineeringGroupProject\NotebookOne\NotebookOne\obj\Debug\NotebookOne.application
