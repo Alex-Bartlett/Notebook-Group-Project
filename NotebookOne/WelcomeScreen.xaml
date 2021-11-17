@@ -11,6 +11,8 @@
         <Label Content="Welcome to the NoteBook One." HorizontalAlignment="Left" Height="79" Margin="33,25,0,0" VerticalAlignment="Top" Width="526" FontSize="36"/>
         <Label Content="This is NoteBook One, the new and easy Notes application you can use. Tutorials will be shown on how to use the &#xD;&#xA;application when the button down &quot;Next&quot; has been clicked on.  " HorizontalAlignment="Left" Height="88" Margin="28,123,0,0" VerticalAlignment="Top" Width="632"/>
         <Image Source="/Images/icon.png" HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="104" Margin="564,25,0,0"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="28,243,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Label Content="1/5" HorizontalAlignment="Left" Margin="318,243,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

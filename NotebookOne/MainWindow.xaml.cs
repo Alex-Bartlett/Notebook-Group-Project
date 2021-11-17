@@ -340,8 +340,11 @@ namespace NotebookOne
 				ws.ShowDialog();
 
 			}
-
 		}
+		private void ApplicationCloseButton(object sender, RoutedEventArgs e)
+        {
+			this.Close();
+        }
 	}
 }
 

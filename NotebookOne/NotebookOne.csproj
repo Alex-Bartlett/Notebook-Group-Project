@@ -84,12 +84,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FifthPage.xaml.cs">
+      <DependentUpon>FifthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FourthPage.xaml.cs">
+      <DependentUpon>FourthPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecondPage.xaml.cs">
       <DependentUpon>SecondPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdPage.xaml.cs">
+      <DependentUpon>ThirdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WelcomeScreen.xaml.cs">
       <DependentUpon>WelcomeScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="FifthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FourthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,6 +120,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SecondPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThirdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -178,6 +199,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\annotated_nb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\annotated_nb2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\annotated_nb3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

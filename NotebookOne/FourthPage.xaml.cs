@@ -15,25 +15,31 @@ using System.Windows.Shapes;
 namespace NotebookOne
 {
     /// <summary>
-    /// Interaction logic for SecondPage.xaml
+    /// Interaction logic for FourthPage.xaml
     /// </summary>
-    public partial class SecondPage : Window
+    public partial class FourthPage : Window
     {
-        public SecondPage()
+        public FourthPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ThirdPage tp = new ThirdPage();
             tp.ShowDialog();
+
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            WelcomeScreen ws = new WelcomeScreen();
-            ws.ShowDialog();
+            FifthPage ftp = new FifthPage();
+            ftp.ShowDialog();
         }
     }
 }

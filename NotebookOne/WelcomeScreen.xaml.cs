@@ -29,5 +29,10 @@ namespace NotebookOne
             SecondPage sp = new SecondPage();
             sp.ShowDialog();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
