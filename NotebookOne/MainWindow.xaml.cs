@@ -406,7 +406,6 @@ namespace NotebookOne
 			await Task.Delay(2000);
 			if (SaveFolderHasContent() == false)
 			{
-				MessageBox.Show("Welcome to NoteBook One");
 				WelcomeScreen ws = new WelcomeScreen();
 				ws.ShowDialog();
 
@@ -421,6 +420,11 @@ namespace NotebookOne
 				autoSaveTimer.Start();
 			});
 		}
+		
+		private void ApplicationCloseButton(object sender, RoutedEventArgs e)
+        {
+			this.Close();
+        }
 	}
 }
 

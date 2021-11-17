@@ -202,6 +202,9 @@ namespace NotebookOne {
             
             #line 13 "..\..\MainWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.NewFile);
+			
+            #line 23 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.ApplicationCloseButton);
             
             #line default
             #line hidden
