@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Notebook One" Height="450" Width="800">
     <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.SaveAs" Executed="SaveAsExecuted"/>
         <CommandBinding Command="ApplicationCommands.Save" Executed="SaveExecuted"/>
         <CommandBinding Command="Open" Executed="OpenFile"/>
         <CommandBinding Command="New" Executed="NewFile"/>
@@ -17,7 +18,7 @@
                 <MenuItem Header="New" Command="New"/>
                 <MenuItem Header="Open" Command="Open"/>
                 <MenuItem Header="Save" Command="ApplicationCommands.Save"/>
-                <MenuItem Header="Save As" />
+                <MenuItem Header="Save As" Command="ApplicationCommands.SaveAs"/>
                 <MenuItem Header="Print" />
                 <Separator />
                 <MenuItem Header="Exit" />

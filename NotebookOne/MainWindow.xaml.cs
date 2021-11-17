@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -23,14 +24,51 @@ namespace NotebookOne
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		//Auto-save timer
+		public Timer autoSaveTimer = new Timer
+		{
+			Interval = 10000
+		};
+
 		public MainWindow()
 		{
 			InitializeComponent();
 			RefreshFilesGrid();
 			PopUpBootUp();
+			//Start auto-save timer
+			autoSaveTimer.Elapsed += AutoSaveTimer_Elapsed;
+			autoSaveTimer.Start();
+		}		
+
+		private void SaveAsExecuted(object sender, ExecutedRoutedEventArgs e)
+		{
+			SaveAs();
+			RefreshFilesGrid();
 		}
 
 		private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
+		{
+			string path = GetRTBDataContext();
+			//Check data context is applied and that it is a valid path
+			if (File.Exists(path))
+			{
+				FileStream fileStream = new FileStream(path, FileMode.Create);
+				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
+				textRange.Save(fileStream, DataFormats.Rtf);
+				fileStream.Dispose();
+			}
+			else
+			{
+				SaveAs();
+				RefreshFilesGrid();
+			}
+			
+		}
+
+		/// <summary>
+		/// Prompts the user to create a new file to save the document to.
+		/// </summary>
+		private void SaveAs()
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "Rich Text Format (*.rtf) |*.rtf|All files (*.*)|*.*";
@@ -39,8 +77,27 @@ namespace NotebookOne
 				FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Save(fileStream, DataFormats.Rtf);
+				fileStream.Dispose();
+				SetRTBDataContext(saveFileDialog.FileName);
 			}
-			RefreshFilesGrid();
+		}
+
+		/// <summary>
+		/// Sets the data context of the richtextbox to the given string
+		/// </summary>
+		/// <param name="data">The data to add</param>
+		private void SetRTBDataContext(string data)
+		{
+			rtbTextEditor.DataContext = data;
+		}
+
+		/// <summary>
+		/// Retrieves the data context of the richtextbox
+		/// </summary>
+		/// <returns>Path if exists, "NOT_FOUND" if no data context assigned</returns>
+		private string GetRTBDataContext()
+		{
+			return rtbTextEditor.DataContext != null ? rtbTextEditor.DataContext.ToString() : "NOT_FOUND";
 		}
 
 		private string GetSaveFolder()
@@ -54,6 +111,7 @@ namespace NotebookOne
 			}
 			return subFolderPath;
 		}
+
 
 		/// <summary>
 		/// Checks to see if the save folder has content
@@ -75,6 +133,7 @@ namespace NotebookOne
 		/// <param name="e"></param>
 		private void OpenFile(object sender, ExecutedRoutedEventArgs e)
 		{
+			autoSaveTimer.Stop(); //Stop auto-saving whilst opening
 			OpenFileDialog openFile1 = new OpenFileDialog();
 
 			openFile1.DefaultExt = "*.rtf";
@@ -84,6 +143,7 @@ namespace NotebookOne
 			{
 				LoadFile(openFile1.FileName);
 			}
+			autoSaveTimer.Start(); //Resume auto-saving once opened
 		}
 
 		/// <summary>
@@ -98,6 +158,7 @@ namespace NotebookOne
 				file = new FileStream(path, FileMode.Open, FileAccess.Read);
 				TextRange textRange = new TextRange(rtbTextEditor.Document.ContentStart, rtbTextEditor.Document.ContentEnd);
 				textRange.Load(file, DataFormats.Rtf);
+				SetRTBDataContext(path); //Set current path to data context
 			}
 			catch (IOException e)
 			{
@@ -114,8 +175,13 @@ namespace NotebookOne
 
 		private void NewFile(object sender, ExecutedRoutedEventArgs e)
 		{
+			SaveExecuted(null, null); //Save current document
 			rtbTextEditor.Document.Blocks.Clear();
+			//Prompt the user to create a new save file for the note
+			SaveAs();
+			RefreshFilesGrid();
 		}
+
 
 		/// <summary>
 		/// Creates a grid row in the given grid
@@ -313,9 +379,13 @@ namespace NotebookOne
 
         private void rtbTextEditor_TextChanged(object sender, TextChangedEventArgs e)
 		{
-				FontFamily selectedFont = rtbTextEditor.Selection.GetPropertyValue(TextBlock.FontFamilyProperty) as FontFamily;
-				SelectedFontFamily.SelectedValue = selectedFont;
+			UpdateSelectedFontFamily();
+		}
 
+		private void UpdateSelectedFontFamily()
+		{
+			FontFamily selectedFont = rtbTextEditor.Selection.GetPropertyValue(TextBlock.FontFamilyProperty) as FontFamily;
+			SelectedFontFamily.SelectedValue = selectedFont;
 		}
 
         private void SelectedFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -337,7 +407,15 @@ namespace NotebookOne
 			{
 				MessageBox.Show("Welcome to NoteBook One");
 			}
+		}
 
+		private void AutoSaveTimer_Elapsed(object sender, ElapsedEventArgs e)
+		{ 
+			this.Dispatcher.Invoke(() => {
+				autoSaveTimer.Stop();
+				SaveExecuted(null, null);
+				autoSaveTimer.Start();
+			});
 		}
 	}
 }
