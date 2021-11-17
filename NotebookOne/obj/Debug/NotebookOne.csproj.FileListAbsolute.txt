@@ -96,3 +96,5 @@ C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\Noteb
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\NotebookOne.application
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\NotebookOne.exe
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\NotebookOne.pdb
+C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\WelcomeScreen.g.cs
+C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\WelcomeScreen.baml
