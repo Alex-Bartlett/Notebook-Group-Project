@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btnaligncentre.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btnalignleft.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btnalignright.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/annotated_nb1.png")]
 
 

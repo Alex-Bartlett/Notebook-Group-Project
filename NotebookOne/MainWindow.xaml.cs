@@ -336,7 +336,6 @@ namespace NotebookOne
 			await Task.Delay(2000);
 			if (SaveFolderHasContent() == false)
 			{
-				MessageBox.Show("Welcome to NoteBook One");
 				WelcomeScreen ws = new WelcomeScreen();
 				ws.ShowDialog();
 

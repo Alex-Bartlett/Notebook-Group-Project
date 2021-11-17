@@ -98,3 +98,5 @@ C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\Noteb
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\NotebookOne.pdb
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\WelcomeScreen.g.cs
 C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\WelcomeScreen.baml
+C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\SecondPage.g.cs
+C:\Users\Omars\Source\Repos\Notebook-Group-Project-1\NotebookOne\obj\Debug\SecondPage.baml

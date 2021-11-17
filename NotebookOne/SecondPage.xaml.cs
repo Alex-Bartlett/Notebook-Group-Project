@@ -15,19 +15,24 @@ using System.Windows.Shapes;
 namespace NotebookOne
 {
     /// <summary>
-    /// Interaction logic for WelcomeScreen.xaml
+    /// Interaction logic for SecondPage.xaml
     /// </summary>
-    public partial class WelcomeScreen : Window
+    public partial class SecondPage : Window
     {
-        public WelcomeScreen()
+        public SecondPage()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SecondPage sp = new SecondPage();
-            sp.ShowDialog();
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            WelcomeScreen ws = new WelcomeScreen();
+            ws.ShowDialog();
         }
     }
 }
