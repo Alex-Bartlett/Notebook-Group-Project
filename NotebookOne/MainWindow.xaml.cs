@@ -27,7 +27,7 @@ namespace NotebookOne
 		//Auto-save timer
 		public Timer autoSaveTimer = new Timer
 		{
-			Interval = 5000
+			Interval = 10000
 		};
 
 		public MainWindow()
