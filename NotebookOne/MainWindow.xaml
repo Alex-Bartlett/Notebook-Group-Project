@@ -29,7 +29,10 @@
                 <MenuItem Header="Undo" Command="ApplicationCommands.Undo"/>
                 <MenuItem Header="Redo" Command="ApplicationCommands.Redo"/>
             </MenuItem>
-            <MenuItem Header="View"/>
+            <MenuItem Header="View">
+                <MenuItem Header="About Us" Click="AboutUs"/>
+                <MenuItem Header="Help" Click="Help"/>
+            </MenuItem>
         </Menu>
         <ToolBar DockPanel.Dock="Top" Background="White">
             <ComboBox 
@@ -43,7 +46,7 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            
+
             <ToggleButton Name="btnBold" Command="EditingCommands.ToggleBold" ToolTip="Bold">
                 <Image Source="/Images/btnBold.png" Width="20" Height="20"></Image>
             </ToggleButton>
@@ -74,7 +77,7 @@
             <ToggleButton Name="btnAlignRight" Command="EditingCommands.AlignRight" Click="UntoggleAlignmentBtns" ToolTip="Align Right">
                 <Image Source="/Images/btnAlignRight.png" Width="20" Height="20"/>
             </ToggleButton>
-            
+
         </ToolBar>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -105,7 +108,7 @@
                 </Grid>
             </Border>
 
-            <RichTextBox Name="rtbTextEditor" Grid.Column="2" Grid.Row="1" SelectionChanged="rtbTextEditor_SelectionChanged" TextChanged="rtbTextEditor_TextChanged" Margin="0,0,0,10">
+            <RichTextBox Name="rtbTextEditor" Grid.Column="2" Grid.Row="1" SelectionChanged="rtbTextEditor_SelectionChanged" TextChanged="rtbTextEditor_TextChanged" Margin="0,0,0,14">
                 <RichTextBox.Resources>
                     <Style TargetType="{x:Type Paragraph}">
                         <Setter Property="Margin" Value="0"/>
@@ -117,6 +120,8 @@
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
+            
+
         </Grid>
     </DockPanel>
 </Window>

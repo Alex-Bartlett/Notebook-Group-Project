@@ -27,12 +27,14 @@ namespace NotebookOne
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ThirdPage tp = new ThirdPage();
+            Close();
             tp.ShowDialog();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             WelcomeScreen ws = new WelcomeScreen();
+            Close();
             ws.ShowDialog();
         }
     }
