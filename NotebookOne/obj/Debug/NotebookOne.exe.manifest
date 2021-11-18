@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NotebookOne.exe" size="100832">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NotebookOne.exe" size="101856">
       <assemblyIdentity name="NotebookOne" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xzbu1pKymTaFOHWWhVGOvs3mOxW5vwwXYoZoo8GafxE=</dsig:DigestValue>
+        <dsig:DigestValue>SIXPFMfRUXUGLEMt7D4m61X14nCF/5KQ/Tz8ZjHJfMc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
