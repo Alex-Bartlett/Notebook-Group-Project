@@ -442,17 +442,6 @@ namespace NotebookOne
 			WelcomeScreen ws = new WelcomeScreen();
 			ws.ShowDialog();
 		}
-		
-		private void AboutUs(object sender, RoutedEventArgs e)
-        {
-			MessageBox.Show("This application has been created by Alex Barlett and Omar Shivji");
-        }
-
-		private void Help(object sender, RoutedEventArgs e)
-        {
-			WelcomeScreen ws = new WelcomeScreen();
-			ws.ShowDialog();
-        }
 
 	}
 
